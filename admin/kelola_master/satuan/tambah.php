@@ -1,0 +1,129 @@
+
+<?php
+include '../../../config/auth_admin.php';
+include '../../../config/koneksi.php';
+
+if(isset($_POST['simpan'])){
+
+    $nama_satuan = mysqli_real_escape_string(
+        $conn,
+        $_POST['nama_satuan']
+    );
+
+    $cek = mysqli_query(
+        $conn,
+        "SELECT * FROM satuan
+         WHERE nama_satuan='$nama_satuan'"
+    );
+
+    if(mysqli_num_rows($cek) > 0){
+
+        echo "
+        <script>
+            alert('Satuan sudah ada!');
+        </script>";
+
+    }else{
+
+        mysqli_query(
+            $conn,
+            "INSERT INTO satuan(nama_satuan)
+             VALUES('$nama_satuan')"
+        );
+
+        echo "
+        <script>
+            alert('Data berhasil ditambahkan');
+            window.location='index.php';
+        </script>";
+    }
+}
+?>
+
+<?php include '../../../components/admin/header.php'; ?>
+<?php include '../../../components/admin/sidebar.php'; ?>
+
+<div class="content kelola-master-page">
+
+    <div class="master-container">
+
+        <div class="master-header">
+
+            <h2>MASTER SATUAN</h2>
+
+            <div class="user-box">
+                <i class="fas fa-user"></i>
+                <?= $_SESSION['nama']; ?>
+            </div>
+
+        </div>
+
+        <a href="index.php" class="btn-kembali">
+            Kembali
+        </a>
+
+        <form method="POST">
+
+            <div style="
+                margin-top:120px;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                gap:20px;
+            ">
+
+                <label style="
+                    font-weight:bold;
+                    color:#444;
+                ">
+                    Satuan
+                </label>
+
+                <input
+                    type="text"
+                    name="nama_satuan"
+                    required
+                    style="
+                        width:350px;
+                        padding:10px;
+                        border:none;
+                        border-radius:5px;
+                        background:#5b8fa8;
+                        color:white;
+                    "
+                >
+
+            </div>
+
+            <div style="
+                margin-top:40px;
+                display:flex;
+                justify-content:center;
+                margin-left:250px;
+            ">
+
+                <button
+                    type="submit"
+                    name="simpan"
+                    style="
+                        background:#4a4a4a;
+                        color:white;
+                        border:none;
+                        padding:10px 20px;
+                        border-radius:5px;
+                        cursor:pointer;
+                    "
+                >
+                    SIMPAN
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<?php include '../../../components/admin/footer.php'; ?>
+```
