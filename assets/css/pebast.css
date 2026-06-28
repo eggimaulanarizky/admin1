@@ -1,0 +1,123 @@
+/* CARD */
+.pegawai-card{
+    background:#dfe5ee;
+    border:2px solid #2196f3;
+    border-radius:20px;
+    min-height:96vh;
+    padding:18px;
+    font-family:'Poppins', sans-serif;
+}
+
+/* HEADER */
+.pegawai-card .card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+
+.pegawai-card .card-header h2{
+    font-size:24px;
+    font-weight:bold;
+    color:#0d3475;
+}
+
+/* RIGHT */
+.pegawai-card .header-right{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:8px;
+}
+
+/* BADGE */
+.pegawai-card .badge{
+    background:white;
+    padding:12px 20px;
+    border-radius:15px;
+    box-shadow:0 4px 8px rgba(0,0,0,.2);
+    font-size:14px;
+}
+
+/* BUTTON KEMBALI */
+.pegawai-card .btn-kembali{
+    background:#beb7aa;
+    padding:8px 15px;
+    border-radius:8px;
+    text-decoration:none;
+    color:black;
+    font-size:14px;
+}
+
+/* JUDUL */
+.pegawai-card .judul-kontrak{
+    margin-top:10px;
+    background:#0f5b9a;
+    color:white;
+    display:inline-block;
+    padding:8px 15px;
+    border-radius:8px;
+    font-size:14px;
+}
+
+/* TABLE */
+.pegawai-card .table-petugas{
+    width:100%;
+    margin-top:20px;
+    border-collapse:separate;
+    border-spacing:0;
+    table-layout:fixed;
+}
+
+/* HEADER TABLE */
+.pegawai-card .table-petugas thead th{
+    background:#4e95bd;
+    color:white;
+    padding:12px;
+    font-size:14px;
+    text-align:center;
+}
+
+/* ROUNDED HEADER */
+.pegawai-card .table-petugas thead th:first-child{
+    border-radius:8px 0 0 8px;
+}
+
+.pegawai-card .table-petugas thead th:last-child{
+    border-radius:0 8px 8px 0;
+}
+
+/* BODY TABLE */
+.pegawai-card .table-petugas tbody td{
+    padding:14px;
+    text-align:center;
+    vertical-align:middle;
+    font-size:14px;
+}
+
+/* INPUT */
+.pegawai-card .table-petugas input{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    background:#4e95bd;
+    color:white;
+    text-align:center;
+}
+
+/* SAVE BUTTON */
+.pegawai-card .save-box{
+    display:flex;
+    justify-content:flex-end;
+    margin-top:25px;
+}
+
+.pegawai-card .btn-simpan{
+    background:#5a5a50;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
